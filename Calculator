@@ -15,21 +15,29 @@ def myCalculator():
 
 
 
-    num = input("Enter any key to begin. ")
+    num123 = input("Enter any key to begin. ")
     print("When you're done enter 'Exit' to stop.\n")
 
     while True:
         try:
-            num = float(input("Enter a number: "))
+            num = str(input("Enter a number: "))
+            if num != str("Exit"):
+                num = float(num)
+            else:
+                break
             print("The entered number is:", num)
         except ValueError:
             print("Invalid input. Please enter a number.")
         else:
             break
-
-    
+            
     operationsKey = True
     while operationsKey == True:
+
+        if num != str("Exit"):
+            num = float(num)
+        else:
+            break
 
         operator = str(input("Enter an operator: "))
             
@@ -65,10 +73,14 @@ def myCalculator():
 
         while True:
             try:
-                num2 = float(input("Enter the next number: "))
+                num2 = str(input("Enter the next number: "))
+                if num2 != str("Exit"):
+                    num2 = float(num2)
+                else:
+                    break
                 print("The entered number is:", num2)
             except ValueError:
-                print("Invalid input. Please enter a number.")
+                print("Invalid input. Please enter the next number.")
             else:
                 break
 
@@ -204,5 +216,7 @@ def myCalculator():
 # -------------------- END OF THE VERSION 1 CALCULATOR --------------------
 
 
-
+    
 myCalculator()
+
+
